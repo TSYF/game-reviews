@@ -6,7 +6,6 @@ const store = createStore({
 		games: null,
 		opinions: []
 	},
-    getters: {},
     mutations: {
 		setGames(state, games) {
 			state.games = games;
@@ -17,9 +16,9 @@ const store = createStore({
 		deleteOpinion(state, opinion) {
 			state.opinions.splice(state.opinions.indexOf(opinion), 1);
 		},
-		editOpinion(state, opinion) {
-			state.opinions[state.opinions.indexOf(opinion.id)].nombre = opinion.nombre;
-			state.opinions[state.opinions.indexOf(opinion.id)].opinion = opinion.opinion;
+		editOpinion(state, { id, opinion, nombre }) {
+			state.opinions[id].nombre = nombre;
+			state.opinions[id].opinion = opinion;
 		}
 	},
     actions: {

@@ -1,6 +1,6 @@
 <template>
     <h1>Editando Opinion:</h1>
-    <form @submit.prevent="" class="p-4">
+    <form @submit.prevent="editOpinion()" class="p-4">
         <label for="nombre">Nombre:</label>
         <br />
         <input
@@ -33,9 +33,6 @@ export default {
         }
     },
     props: {
-        opinion: {
-            type: Object,
-        },
         id: {
             type: Number,
         },
@@ -45,7 +42,7 @@ export default {
             this.$store.dispatch("editOpinion", {
                 nombre: this.nombre,
                 opinion: this.opinion,
-                id: this.id - 1
+                id: this.id
         });
         },
         previousPage() {

@@ -33,12 +33,12 @@
                     <router-link
                         class="nav-link p-2 d-md-inline-block px-md-2 my-md-0"
                         :to="{ name: 'opiniones' }"
-                        >Opiniones</router-link
+                        ><i class="bi bi-chat-fill"></i> Opiniones</router-link
                     >
                     <router-link
                         class="nav-link p-2 d-md-inline-block"
                         :to="{ name: 'admin' }"
-                        >Admin</router-link
+                        ><i class="bi bi-gear-wide-connected"></i> Admin</router-link
                     >
                 </div>
             </div>

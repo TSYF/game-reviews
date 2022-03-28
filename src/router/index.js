@@ -23,6 +23,11 @@ const routes = [
     component: () => import('@/views/EditOpinion.vue'),
     props: true,
   },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: () => import('@/views/NotFound.vue'),
+  },
 ]
 
 const router = createRouter({

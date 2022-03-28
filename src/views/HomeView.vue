@@ -34,3 +34,9 @@ export default {
     components: { GameCard, Module },
 };
 </script>
+
+<style>
+    h1 {
+        text-align: center;
+    }
+</style>

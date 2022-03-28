@@ -1,6 +1,16 @@
 <template>
     <h1>Editando Opinion:</h1>
-    <form @submit.prevent="editOpinion()" class="p-4">
+    <form
+        @submit.prevent="
+            editOpinion({
+                id,
+                opinion,
+                nombre,
+            }),
+                previousPage()
+        "
+        class="p-4"
+    >
         <label for="nombre">Nombre:</label>
         <br />
         <input
@@ -19,18 +29,26 @@
             name="opinion"
             id="opinion"
         />
-        <button @click="previousPage" type="button" class="btn btn-primary">Regresar</button>
-        <button type="submit" class="btn btn-info">Guardar</button>
+        <button
+            @click="previousPage"
+            type="button"
+            class="mt-3 btn btn-primary"
+        >
+            Regresar
+        </button>
+        <button type="submit" class="mt-3 btn btn-info ms-2">Guardar</button>
     </form>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
     data() {
         return {
             nombre: "",
             opinion: "",
-        }
+        };
     },
     props: {
         id: {
@@ -38,17 +56,11 @@ export default {
         },
     },
     methods: {
-        editOpinion() {
-            this.$store.dispatch("editOpinion", {
-                nombre: this.nombre,
-                opinion: this.opinion,
-                id: this.id
-        });
-        },
+        ...mapActions(["editOpinion"]),
         previousPage() {
-            this.$router.push({ name: "admin" });
+            this.$router.go(-1);
         },
-    }
+    },
 };
 </script>
 

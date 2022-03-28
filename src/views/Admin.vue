@@ -1,5 +1,5 @@
 <template>
-    <h1 class="text-center">Administrando la lista de opiniones:</h1>
+    <h1>Administrando la lista de opiniones:</h1>
     <div class="container">
         <table class="table">
             <thead>

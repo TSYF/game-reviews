@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <!-- Navigation bar icon/brand -->
             <div class="navbar-brand">
-                <h2>Games Opinion</h2>
+                <h2><i class="bi bi-headset"></i> Games Opinion</h2>
             </div>
             <!-- Button for opening the nav menu -->
             <button
@@ -28,7 +28,7 @@
                     <router-link
                         class="nav-link p-2 d-md-inline-block"
                         :to="{ name: 'home' }"
-                        >Home</router-link
+                        ><i class="bi bi-house-door-fill"></i> Home</router-link
                     >
                     <router-link
                         class="nav-link p-2 d-md-inline-block px-md-2 my-md-0"

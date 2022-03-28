@@ -1,6 +1,6 @@
 <template>
-    <h1>Administrando la lista de opiniones:</h1>
-    <div class="container-fluid">
+    <h1 class="text-center">Administrando la lista de opiniones:</h1>
+    <div class="container">
         <table class="table">
             <thead>
                 <th>#</th>
@@ -16,7 +16,7 @@
                     <td>{{ opinion.opinion }}</td>
                     <td>
                         <button @click="editOpinion(index)" class="btn btn-primary">Edit</button>
-                        <button @click="deleteOpinion(index)" class="btn btn-danger">Delete</button>
+                        <button @click="deleteOpinion(index)" class="btn btn-danger ms-2">Delete</button>
                     </td>
                 </tr>
             </tbody>

@@ -14,7 +14,7 @@ const store = createStore({
 			state.opinions.push(opinion);
 		},
 		deleteOpinion(state, opinion) {
-			state.opinions.splice(state.opinions.indexOf(opinion), 1);
+			state.opinions.splice(opinion, 1);
 		},
 		editOpinion(state, { id, opinion, nombre }) {
 			state.opinions[id].nombre = nombre;

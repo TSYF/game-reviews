@@ -1,18 +1,36 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="container-fluid d-flex">
+        <GameCard
+            class="m-3"
+            v-for="game in games"
+            :key="game.id"
+            :game="game"
+			@game-event="modalGame"
+        />
+    </div>
+    <Module :otroGame="otroGame" />
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import GameCard from "@/components/GameCard.vue";
+import Module from "@/components/Module.vue";
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+    name: "HomeView",
+	data() {
+		return {
+			otroGame: null
+		}
+	},
+	methods: {
+		modalGame(val) {
+			this.otroGame = val;
+		}
+	},
+    computed: {
+        games() {
+            return this.$store.state.games;
+        },
+    },
+    components: { GameCard, Module },
+};
 </script>
